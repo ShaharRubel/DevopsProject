@@ -8,7 +8,7 @@ environment {
     stages {
         stage("Clone Repository") {
             steps {
-                git([url: 'git@github.com:ShaharRubel/DevopsExpertAdvanced.git', branch: 'main', credentialsId: 'github_repo'])
+                git([url: 'git@github.com:ShaharRubel/DevopsProject.git', branch: 'main', credentialsId: 'github_repo'])
             }
         }
         stage("Deploy application with docker compose"){
