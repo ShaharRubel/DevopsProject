@@ -1,13 +1,31 @@
 import requests
 import json
-import sys
-import os
+import pymysql
+import time
 
-# Importing from parent directory setup
-current = os.path.dirname(os.path.realpath(__file__))
-parent = os.path.dirname(current)
-sys.path.append(parent)
-from db_connector import connect_db
+def connect_db():
+    retry_flag = True
+    while retry_flag:
+        try:
+            connection = 0
+            timeout = 10
+            connection = pymysql.connect(
+                charset="utf8mb4",
+                connect_timeout=timeout,
+                cursorclass=pymysql.cursors.DictCursor,
+                db="Devops",
+                host="localhost",
+                password="devops",
+                read_timeout=timeout,
+                port=3306,
+                user="devops",
+                write_timeout=timeout,
+            )
+            print(connection)
+            return connection
+        except Exception as e:
+            print(e)
+            time.sleep(3)
 
 
 

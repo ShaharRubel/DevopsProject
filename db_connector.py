@@ -4,8 +4,7 @@ import time
 
 def connect_db():
     """Connect to remote DB named DevopsExperts as per the documentation of aiven
-    https://console.aiven.io/accou
-    t/a51aa96da1f1/project/devopsexperts/services/mysql-23b9542e/overview
+    https://console.aiven.io/accout/a51aa96da1f1/project/devopsexperts/services/mysql-23b9542e/overview
     """
     retry_flag = True
     while retry_flag:
