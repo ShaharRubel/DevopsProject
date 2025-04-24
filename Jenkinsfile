@@ -47,7 +47,7 @@ environment {
                 }
             }
         }
-        stage("Clean Environment docker"){
+        stage("placeholder"){
             steps{
                 bat "echo Test"
             }
