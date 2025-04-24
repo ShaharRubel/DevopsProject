@@ -14,3 +14,8 @@ Todo
 
 Things to improve:
 1. add different requirements for each image and host
+2. add mysql replication cluster on kubernetes
+
+
+
+## commands

@@ -1,0 +1,9 @@
+backend:
+  repCount: 5
+  imageName: darkerlighter/backendapi:latest
+
+frontend:
+  repCount: 5
+  imageName: darkerlighter/frontend:latest
+
+serviceType: LoadBalancer
