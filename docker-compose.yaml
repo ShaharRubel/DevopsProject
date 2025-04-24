@@ -8,6 +8,9 @@ services:
       dockerfile: frontend/Dockerfile
     ports:
       - "5001:5001"
+    depends_on:
+      - mysql
+
 
   backend:
     container_name: devops-backend
@@ -16,6 +19,8 @@ services:
       dockerfile: backend/Dockerfile
     ports:
       - "5000:5000"
+    depends_on:
+      - mysql
 
 
   mysql:
