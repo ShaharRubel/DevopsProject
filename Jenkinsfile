@@ -58,9 +58,13 @@ environment {
                 }
             }
         }
-        stage("delete unused docker images"){
+        stage("Delete unused docker images"){
             steps{
-                bat "echo Test"
+                bat "docker rmi ${backendimagename}:${BUILD_NUMBER}"
+                bat "docker rmi ${frontendimagename}:${BUILD_NUMBER}"
+                bat "docker rmi ${backendimagename}:latest"
+                bat "docker rmi ${frontendimagename}:latest"
+
             }
         }
 
