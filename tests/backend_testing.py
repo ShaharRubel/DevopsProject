@@ -10,6 +10,11 @@ sys.path.append(parent)
 from db_connector import connect_db
 
 
+
+# Secure connection to db
+connection = connect_db()
+cursor = connection.cursor()
+
 # Step 1. Post request to create user
 url = "http://127.0.0.1:5000/users/1"
 
@@ -36,8 +41,7 @@ except:
 
 # Step 3
 # connect to DB
-connection = connect_db()
-cursor = connection.cursor()
+
 cursor.execute("SELECT * FROM Devops.users WHERE user_id = 1;")
 name = cursor.fetchall()[0]['user_name']
 
