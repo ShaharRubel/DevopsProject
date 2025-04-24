@@ -1,9 +1,13 @@
 backend:
   repCount: 5
   imageName: darkerlighter/backendapi:latest
+  serviceType: LoadBalancer
 
 frontend:
   repCount: 5
   imageName: darkerlighter/frontend:latest
+  serviceType: LoadBalancer
 
-serviceType: LoadBalancer
+mysql:
+  imageName: mysql:latest
+  serviceType: LoadBalancer
