@@ -9,5 +9,8 @@ Todo
    2. frontend - done
    3. db - done
 6. update helm chart to deploy the application
-7. build a jenkins pipeline
+7. build a jenkins pipeline - in progress
 
+
+Things to improve:
+1. add different requirements for each image and host
