@@ -24,7 +24,7 @@ environment {
         }
         stage("Clean Environment docker"){
             steps{
-                bat 'docker-compose down --rmi "all"'
+                bat 'docker-compose down --rmi local'
             }
         }
 
