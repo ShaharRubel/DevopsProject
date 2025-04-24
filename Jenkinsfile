@@ -28,30 +28,30 @@ environment {
             }
         }
 
-//         stage("Build docker images"){
-//             steps{
-//                 bat "docker build -t ${backendimagename}:${BUILD_NUMBER} -f backend/Dockerfile ."
-//                 bat "docker build -t ${frontendimagename}:${BUILD_NUMBER} -f frontend/Dockerfile ."
-//             }
-//         }
-//         stage("Push docker image"){
-//             steps{
-//                 script {
-//                     withCredentials([usernamePassword(credentialsId: registryCredential, usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
-//                         bat "docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD"
-//
-//                         // Push the images
-//                         bat "docker push ${backendimagename}:${BUILD_NUMBER}"
-//                         bat "docker push ${frontendimagename}:${BUILD_NUMBER}"
-//                     }
-//                 }
-//             }
-//         }
-//         stage("Clean Environment docker"){
-//             steps{
-//                 bat "echo Test"
-//             }
-//         }
+        stage("Build docker images"){
+            steps{
+                bat "docker build -t ${backendimagename}:${BUILD_NUMBER} -f backend/Dockerfile ."
+                bat "docker build -t ${frontendimagename}:${BUILD_NUMBER} -f frontend/Dockerfile ."
+            }
+        }
+        stage("Push docker image"){
+            steps{
+                script {
+                    withCredentials([usernamePassword(credentialsId: registryCredential, usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
+                        bat "docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD"
+
+                        // Push the images
+                        bat "docker push ${backendimagename}:${BUILD_NUMBER}"
+                        bat "docker push ${frontendimagename}:${BUILD_NUMBER}"
+                    }
+                }
+            }
+        }
+        stage("Clean Environment docker"){
+            steps{
+                bat "echo Test"
+            }
+        }
 
     }
 }
