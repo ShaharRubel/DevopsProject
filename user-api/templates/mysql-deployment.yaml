@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
       - name: mysql
-        image: { { .Values.mysql.imageName } }
+        image: {{ .Values.mysql.imageName }}
         ports:
         - containerPort: 3306
         env:
@@ -32,7 +32,7 @@ kind: Service
 metadata:
   name: mysql
 spec:
-  type: { { .Values.mysql.serviceType } }
+  type: {{ .Values.mysql.serviceType }}
   selector:
     app: mysql
   ports:
