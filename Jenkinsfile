@@ -67,6 +67,11 @@ environment {
 
             }
         }
+        stage("Deploy Helm chart to production"){
+            steps{
+                bat "helm upgrade mywebapp user-api --install --set backend.imageName=${backendimagename}:${BUILD_NUMBER} --set frontend.imageName=${frontendimagename}:${BUILD_NUMBER}"
+            }
+        }
 
     }
 }

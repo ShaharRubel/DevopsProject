@@ -21,4 +21,6 @@
 
 
 ## commands
-kubectl port-forward service/backend-service 5000:5000
+- helm install mywebapp user-api
+- kubectl port-forward service/backend-service 5000:5000
+- kubectl port-forward service/frontend-service 5001:5001
