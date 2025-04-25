@@ -1,11 +1,9 @@
 import pymysql
 import time
-
+import os
 
 def connect_db():
-    """Connect to remote DB named DevopsExperts as per the documentation of aiven
-    https://console.aiven.io/accout/a51aa96da1f1/project/devopsexperts/services/mysql-23b9542e/overview
-    """
+    """Connect to remote DB named Devops"""
     retry_flag = True
     while retry_flag:
         try:
@@ -17,10 +15,10 @@ def connect_db():
                 cursorclass=pymysql.cursors.DictCursor,
                 db="Devops",
                 host="mysql",
-                password="devops",
+                password=os.environ['MYSQL_PASSWORD'],
                 read_timeout=timeout,
                 port=3306,
-                user="devops",
+                user=os.environ['MYSQL_USERNAME'],
                 write_timeout=timeout,
             )
             print(connection)

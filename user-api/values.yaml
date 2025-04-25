@@ -1,10 +1,10 @@
 backend:
-  repCount: 5
+  repCount: 3
   imageName: darkerlighter/backendapi:latest
   serviceType: LoadBalancer
 
 frontend:
-  repCount: 5
+  repCount: 3
   imageName: darkerlighter/frontend:latest
   serviceType: LoadBalancer
 

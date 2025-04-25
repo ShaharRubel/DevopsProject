@@ -17,6 +17,17 @@ spec:
         image: {{ .Values.frontend.imageName }}
         ports:
         - containerPort: 5001
+        env:
+          - name: MYSQL_USERNAME
+            valueFrom:
+              secretKeyRef:
+                name: mysql-secret
+                key: mysql-username
+          - name: MYSQL_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: mysql-secret
+                key: mysql-password
 ---
 apiVersion: v1
 kind: Service
