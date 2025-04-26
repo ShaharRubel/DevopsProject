@@ -9,9 +9,9 @@
    2. frontend - done
    3. db - done
 6. update helm chart to deploy the application - in progress
-   1. add secret kubernetes
-   2. add configmap with url of mysql
-7. build a jenkins pipeline - in progress
+   1. add secret kubernetes - done
+   2. add configmap with url of mysql - done
+7. build a jenkins pipeline - done
 
 
 ### Things to improve:
