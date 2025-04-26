@@ -11,6 +11,7 @@ services:
     environment:
       MYSQL_USERNAME: devops
       MYSQL_PASSWORD: devops
+      MYSQL_SERVER: mysql
     depends_on:
       - mysql
 
@@ -25,6 +26,7 @@ services:
     environment:
       MYSQL_USERNAME: devops
       MYSQL_PASSWORD: devops
+      MYSQL_SERVER: mysql
     depends_on:
       - mysql
 

@@ -14,7 +14,7 @@ def connect_db():
                 connect_timeout=timeout,
                 cursorclass=pymysql.cursors.DictCursor,
                 db="Devops",
-                host="mysql",
+                host=os.environ['MYSQL_SERVER'],
                 password=os.environ['MYSQL_PASSWORD'],
                 read_timeout=timeout,
                 port=3306,
