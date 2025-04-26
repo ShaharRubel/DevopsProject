@@ -5,8 +5,8 @@
 # Steps to run it yourself
 1. Download required files
 ```
-git clone https://github.com/ShaharRubel/DevopsExpertAdvanced.git
-pip install pymysql flask requests selenium
+git clone https://github.com/ShaharRubel/DevopsProject.git
+pip install -r requirements.txt
 ```
 2. cd into direcotry
 ```commandline
