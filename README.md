@@ -22,3 +22,9 @@ kubectl port-forward service/backend-service 5000:5000
 kubectl port-forward service/frontend-service 5001:5001
 ```
 
+# Steps to setup jenkins pipeline
+1. setup credential named "dockerhub_id" with docker hub credentials
+2. add a windows node to jenkins
+3. create pipeline project and choose "pipeline script from scm"
+4. choose branch main
+5. choose build now
