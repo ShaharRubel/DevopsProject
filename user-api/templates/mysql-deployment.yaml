@@ -20,9 +20,9 @@ spec:
         - name: MYSQL_ROOT_PASSWORD
           value: megasupersecretpassword
         - name: MYSQL_USER
-          value: {{ default "" .Values.mysql.username | b64enc | quote }}
+          value: {{ .Values.mysql.username }}
         - name: MYSQL_PASSWORD
-          value: {{ default "" .Values.mysql.password | b64enc | quote }}
+          value: {{ .Values.mysql.password }}
         - name: MYSQL_DATABASE
           value: Devops
 ---
@@ -30,7 +30,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: mysql-service
+  name: mysql
 spec:
   type: {{ .Values.mysql.serviceType }}
   selector:
