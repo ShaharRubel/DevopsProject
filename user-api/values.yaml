@@ -11,3 +11,5 @@ frontend:
 mysql:
   imageName: mysql:latest
   serviceType: LoadBalancer
+  username: devops
+  password: verysecurepassword

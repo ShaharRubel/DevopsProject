@@ -17,6 +17,7 @@
 ### Things to improve:
 1. add different requirements for each image and host
 2. add mysql replication cluster on kubernetes
+3. add namespace to all templates
 
 
 
@@ -24,3 +25,6 @@
 - helm install mywebapp user-api
 - kubectl port-forward service/backend-service 5000:5000
 - kubectl port-forward service/frontend-service 5001:5001
+- kubectl port-forward service/mysql 3306:3306
+- kubectl get secret mysql-secret -o json
+- kubectl get secrets/mysql-secret -o jsonpath="{.data.mysql-password}"
