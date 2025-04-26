@@ -1,30 +1,24 @@
-## Todo
-1. update connection to use local db - done
-2. implement retry logic to connection db - done
-   1. rewrite queries with new DB name - done
-3. add logic to create table - done
-4. add environment variable to be used in a container
-5. update compose to include 3 things: - done
-   1. backend - done
-   2. frontend - done
-   3. db - done
-6. update helm chart to deploy the application - in progress
-   1. add secret kubernetes - done
-   2. add configmap with url of mysql - done
-7. build a jenkins pipeline - done
+# Tech Stack
+![image](https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue) ![image](https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white) ![image](https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white) ![image](https://img.shields.io/badge/Selenium-43B02A?style=for-the-badge&logo=Selenium&logoColor=white) ![image](https://img.shields.io/badge/Jenkins-D24939?style=for-the-badge&logo=Jenkins&logoColor=white)
+![image](https://img.shields.io/badge/Helm-0F1689?style=for-the-badge&logo=Helm&labelColor=0F1689) ![image](https://img.shields.io/badge/Docker%20Compose-2496ED?style=for-the-badge&logo=docker&logoColor=white)
 
+# Steps to run it yourself
+1. Download required files
+```
+git clone https://github.com/ShaharRubel/DevopsExpertAdvanced.git
+pip install pymysql flask requests selenium
+```
+2. cd into direcotry
+```commandline
+cd DevopsProject
+```
+3. run helm chart
+```commandline
+helm install mywebapp user-api
+```
+4. portforward to access frontend and backend
+```commandline
+kubectl port-forward service/backend-service 5000:5000
+kubectl port-forward service/frontend-service 5001:5001
+```
 
-### Things to improve:
-1. add different requirements for each image and host
-2. add mysql replication cluster on kubernetes
-3. add namespace to all templates
-
-
-
-## commands
-- helm install mywebapp user-api
-- kubectl port-forward service/backend-service 5000:5000
-- kubectl port-forward service/frontend-service 5001:5001
-- kubectl port-forward service/mysql 3306:3306
-- kubectl get secret mysql-secret -o json
-- kubectl get secrets/mysql-secret -o jsonpath="{.data.mysql-password}"
