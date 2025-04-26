@@ -28,3 +28,8 @@ kubectl port-forward service/frontend-service 5001:5001
 3. create pipeline project and choose "pipeline script from scm"
 4. choose branch main
 5. choose build now
+
+## Using postman collection
+1. locate DevopsProject.postman_collection.json
+2. click import collection in Postman
+3. copy file to window prompt
